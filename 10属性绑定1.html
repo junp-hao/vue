@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<a v-bind:href="url" v-text="a">百度</a>
+			<a :href="url" v-text="a">百度</a>
+			<button v-on:click="change">切换</button>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 *	属性绑定
+			 * */
+			var vue=new Vue({
+				el:"#app",
+				data:{
+					url:"https://www.baidu.com",
+					a:'百度'
+				},
+				methods:{
+					change:function(){
+						this.a='虎牙';
+						this.url="https://www.huya.com/";
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.active{
+				border: red 1px solid;
+				width: 100px;
+				height: 100px;
+			}
+			.s{
+				background-color:orange ;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div v-bind:class="[activeclass,errorcclass]">测试样式</div>
+			<button v-on:click="demo">切换</button>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+
+			var vue=new Vue({
+				el:"#app",
+				data:{
+					activeclass:'active',
+					errorcclass:'s'
+				},
+				methods:{
+					demo:function(){
+						this.activeclass='',
+						this.errorcclass=''
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

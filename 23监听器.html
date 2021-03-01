@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div>
+				<span>姓：</span>
+				<span>
+					<input type="text" v-model="name1"/>
+				</span>
+			</div>
+			<div>
+				<span>名：</span>
+				<span>
+					<input type="text" v-model="name"/>
+				</span>
+			</div>
+			<div>
+				{{nameall}}
+			</div>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+
+			var vue=new Vue({
+				el:"#app",
+				data:{
+					name:'junp',
+					name1:'hao',
+					nameall:'hao junp'
+				},
+				methods:{
+					
+				},
+				watch:{
+					name:function(val){
+						this.nameall=this.name1+" "+val;
+					},
+					name1:function(val){
+						this.nameall=val+" "+this.name;
+					}
+				},
+				computed:{
+					
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div>{{num}}</div>
+			<div v-on:click="sum">
+				<button v-on:click.stop="sum0">点击</button>
+			</div>
+			<div>
+				<a href="https://www.baidu.com" v-on:click.prevent="demo">百度</a>
+			</div>
+		</div>
+		<script src="js/vue.js"></script>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:"#app",
+				data:{
+					num:0
+				},
+				methods:{
+					sum:function(){
+						//这个this是vue实例对象，也就是（vm）
+						this.num++;
+					
+					},
+					sum0:function(event){
+						//这个this是vue实例对象，也就是（vm）
+//						event.stopPropagation();
+					},
+					demo:function(){
+//						event.preventDefault();
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

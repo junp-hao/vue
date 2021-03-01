@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div v-if="score>=90">优秀</div>
+			<div v-else-if="score<90&&score>=80">良好</div>
+			<div v-else-if="score<80&&score>=70">一般</div>
+			<div v-else>比较差</div>
+			<div v-show="flag">junp</div>
+			<button v-on:click="demo">切换</button>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+
+			var vue=new Vue({
+				el:"#app",
+				data:{
+					score:60,
+					flag:false
+				},
+				methods:{
+					demo:function(){
+						this.flag=!this.flag
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

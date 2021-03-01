@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-color="msg"/>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			Vue.directive('color',{
+				bind:function(el,bindig){
+//						根据指令的参数设置背景颜色
+//						console.log(binding.value.color);
+						el.style.backgroundColor=bindig.value.color;
+				}
+			})
+
+			var vue=new Vue({
+				el:"#app",
+				data:{
+					msg:{
+					color:"orange"
+				}
+				},
+				methods:{
+					
+				}
+			})
+		</script>
+	</body>
+</html>

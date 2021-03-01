@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div>
+				用户名：<input type="text" v-on:keyup.delete="sum" v-model="name"/>
+			</div>
+			<div id="">
+				密码：<input type="password" v-on:keyup.enter="demo" v-model="pwd"/>
+			</div>
+			<div >
+				<input type="submit" @click="demo" value="提交" />
+			</div>
+		</div>
+		<script src="js/vue.js"></script>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:"#app",
+				data:{
+					name:'',
+					pwd:''
+				},
+				methods:{
+					sum:function(){
+						//按delete键全部删除
+						this.name='';
+					},
+					demo:function(){
+						console.log(this.name,this.pwd)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<h1>简单计数器</h1>
+			<div>
+				数据A：<input type="text" v-model="a"/>
+			</div>
+			<div >
+				数组B：<input type="text" v-model="b"/>
+			</div>
+			<div >
+				<input type="button" value="计算" v-on:click="sum"/>
+			</div>
+			<div >
+				结果：<span v-text="result"></span>
+			</div>
+		</div>
+		<script src="js/vue.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			var vue=new Vue({
+				el:"#app",
+				data:{
+					a:'',
+					b:'',
+					result:''
+				},
+				methods:{
+					sum:function(){
+						this.result=parseInt(this.a)+parseInt(this.b);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

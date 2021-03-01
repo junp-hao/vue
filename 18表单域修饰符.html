@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model.number="age"/>  <!--输入框只能输入数字-->
+			<input type="text" v-model.trim="info"/>	<!--去除首尾空格-->
+			<input type="text" v-model.lazy="change"/>	
+			<div>{{change}}</div>
+			<button @click="demo">点击</button>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+
+			var vue=new Vue({
+				el:"#app",
+				data:{
+					age:'',
+					info:'',
+					change:''
+				},
+				methods:{
+					demo:function(){
+						console.log(this.info.length);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

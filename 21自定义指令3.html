@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-color="msg"/>
+			<input type="text" v-focus/>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+
+			var vue=new Vue({
+				el:"#app",
+				data:{
+					msg:{color:'red'}
+				},
+				methods:{
+					
+				},
+				directives:{
+					color:{
+						bind:function(el,bindig){
+						el.style.backgroundColor=bindig.value.color;
+					}
+					},
+					focus:{
+						inserted:function(el){
+							el.focus();
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
